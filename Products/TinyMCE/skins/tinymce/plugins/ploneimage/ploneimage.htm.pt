@@ -91,6 +91,13 @@
           </div>
 
           <div class="field">
+            <label for="caption-text" i18n:domain="plone.tinymce" i18n:translate="">Caption text</label>
+            <div class="widget">
+              <input type="input" name="caption-text" id="caption-text" />
+            </div>
+          </div>
+
+          <div class="field">
             <label id="dimensionslabel" for="dimensions" i18n:translate="ploneimage_dlg_dimensions"></label>
             <div class="widget">
               <select id="dimensions" name="dimensions">

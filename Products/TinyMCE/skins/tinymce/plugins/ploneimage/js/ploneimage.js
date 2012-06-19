@@ -162,9 +162,10 @@ var ImageDialog = {
             src : href,
             'class' : this.getSelectValue(f0, 'classes') +
                 ((ed.settings.allow_captioned_images && f0.elements['caption'].checked) ? ' captioned' : '') +
-                (ImageDialog.current_class == '' ? '' : ' ' + ImageDialog.current_class)
+                (ImageDialog.current_class == '' ? '' : ' ' + ImageDialog.current_class),
+            'alt': 'caption:'+f0.elements['caption-text'].value
         };
-
+        
         el = ed.selection.getNode();
 
         if (el && el.nodeName == 'IMG') {
@@ -449,6 +450,19 @@ var ImageDialog = {
                 }
                 document.getElementById('description').value = data.description;
                 document.getElementById('description_href').value = path;
+                
+                var ed = tinyMCEPopup.editor;
+                var el = ed.selection.getNode();
+                var caption = data.description;
+
+                if (el && el.nodeName == 'IMG') {
+                    var t = ed.dom.getAttrib(el, 'alt', '')
+                    if (t && (t.slice(0,8)==='caption:'))
+                        caption = t.slice(8)
+                }
+
+                document.getElementById('caption-text').value  = caption
+                  
                 if (data.scales) {
                     var dimensions = document.getElementById('dimensions');
                     var newdimensions = [];
