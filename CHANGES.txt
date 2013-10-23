@@ -2,10 +2,63 @@
 HISTORY
 =======
 
-1.2.13 (unreleased)
+1.2.18 (unreleased)
 -------------------
 
 - Nothing changed yet.
+
+
+1.2.17 (2013-08-14)
+-------------------
+
+- Check for a 'enable_tinymce_livesearch'property in order to override the 
+  enable_livesearch of site_properties for instances where you want to have
+  livesearch enabled on the portal_search and yet you do not want it enabled
+  within TinyMCE and the other way around
+  [ichim-david]
+
+- Fixed charset in source editor for non en languages.
+  [kroman0]
+
+
+1.2.16 (2013-03-15)
+-------------------
+
+- Fixed javascript error when using Firefox because of editor_plugin.js found
+  within plonestyle and definitionlist plugins. 
+  This is a backport of a solution done in master branch in changeset 8efc3145
+  [ichim-david]
+- Fixed ``plone.namedfile`` dependecy check
+  [keul]
+
+
+1.2.15 (2013-01-13)
+-------------------
+
+- Remove images in data URIs on save.
+  Fixes https://dev.plone.org/ticket/13199
+  [khink]
+
+- Support passing a maxlength attribute to tinymce_wysiwyg_support.
+  [davisagli]
+
+
+1.2.14 (2012-11-14)
+-------------------
+
+- Escape double quote to so images preview keeps working when having quote
+  in tilte
+  [maartenkling]
+
+- Declare dependency on zope.app.component.
+  [maurits]
+
+
+1.2.13 (2012-08-18)
+-------------------
+
+- Add a dependency on zope.app.content in setup.py.
+  [maurits]
 
 
 1.2.12 (2012-05-08)

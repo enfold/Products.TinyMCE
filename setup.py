@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 import sys
 
-version = '1.2.13.dev0'
+version = '1.2.18.dev0'
 
 if sys.version_info[0] == 2 and sys.version_info[1] < 6:
     requires = ['simplejson']
@@ -34,6 +34,8 @@ setup(name='Products.TinyMCE',
           'elementtree',
           'plone.app.imaging>=1.0.2',
           'plone.outputfilters',
+          'zope.app.content',
+          'zope.app.component',
       ] + requires,
       extras_require={
             'test': ['plone.app.testing', 'unittest2'],
