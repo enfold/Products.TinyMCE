@@ -89,7 +89,8 @@
 
                     <div class="field">
                         <div class="widget">
-                            <input type="checkbox" name="caption" id="caption"/> <label for="caption" i18n:domain="plone.tinymce" i18n:translate="">Caption</label>
+                            <label for="caption" i18n:domain="plone.tinymce" i18n:translate="">Caption</label>
+                            <input type="text" name="caption" id="caption"/> 
                         </div>
                     </div>
 

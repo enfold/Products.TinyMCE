@@ -312,7 +312,7 @@ BrowserDialog.prototype.init = function () {
                     case 'captioned':
                         if (self.editor.settings.allow_captioned_images) {
                             // Check the caption checkbox
-                            jq('#caption', document).attr('checked', 'checked');
+                            jq('#caption', document).val(selected_node.attr('data-caption'));
                         }
                         break;
 
@@ -589,7 +589,8 @@ BrowserDialog.prototype.insertImage = function () {
         href = this.current_link,
         active_panel = jq('#linktype .current a', document).attr('href'),
         dimension,
-        classes;
+        classes,
+        caption;
 
     // Pass-through classes
     classes = [].concat(this.current_classes);
@@ -614,8 +615,9 @@ BrowserDialog.prototype.insertImage = function () {
         }
 
         // Image captioning
-        if (this.editor.settings.allow_captioned_images && jq('#caption', document).is(':checked')) {
+        if (this.editor.settings.allow_captioned_images && jq('#caption', document).val() !== "") {
             classes.push('captioned');
+            caption = jq('#caption', document).val();
         }
 
         // if we have absolute url, make sure it's relative
@@ -641,6 +643,12 @@ BrowserDialog.prototype.insertImage = function () {
         'src' : href,
         'class' : classes.join(' ')
     });
+
+    if (caption !== undefined){
+        jq.extend(attrs, {
+            'data-caption' : caption
+        });
+    }
 
     if (selected_node && selected_node.nodeName.toUpperCase() === 'IMG') {
         // Update an existing <img/> element
