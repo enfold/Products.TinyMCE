@@ -36,6 +36,7 @@ setup(name='Products.TinyMCE',
           'plone.outputfilters',
           'zope.app.content',
           'zope.app.component',
+          'zope.globalrequest',
       ] + requires,
       extras_require={
             'test': ['plone.app.testing', 'unittest2'],
