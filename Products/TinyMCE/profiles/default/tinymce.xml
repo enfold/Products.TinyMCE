@@ -31,6 +31,7 @@
   <customplugins>
     <element value="ploneimage"/>
     <element value="plonelink"/>
+    <element value="plonelightbox"/>
   </customplugins>
   <entity_encoding value="raw"/>
  </resourcetypes>

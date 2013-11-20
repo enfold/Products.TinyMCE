@@ -69,13 +69,18 @@
 			m.add({title : 'advanced.paste_desc', icon : 'paste', cmd : 'Paste'});
 
 			if ((el.nodeName == 'A' && !ed.dom.getAttrib(el, 'name')) || !col) {
-				m.addSeparator();
-				m.add({title : 'advanced.link_desc', icon : 'link', cmd : ed.plugins.plonelink ? 'mcePloneLink' : 'mceLink', ui : true});
-				m.add({title : 'advanced.unlink_desc', icon : 'unlink', cmd : 'UnLink'});
-			}
+        m.addSeparator();
+        m.add({title : 'advanced.link_desc', icon : 'link', cmd : ed.plugins.plonelink ? 'mcePloneLink' : 'mceLink', ui : true});
+        m.add({title : 'advanced.unlink_desc', icon : 'unlink', cmd : 'UnLink'});
+      }
+
+      if (el.nodeName == 'IMG') {
+        m.addSeparator();
+        m.add({title : 'Lightbox', cmd : ed.plugins.plonelightbox ? 'mcePloneLightbox' : 'mceLightbox', ui : true});
+      }
 
 			m.addSeparator();
-			m.add({title : 'advanced.image_desc', icon : 'image', cmd : ed.plugins.ploneimage ? 'mcePloneImage' : 'mceImage', ui : true});
+      m.add({title : 'advanced.image_desc', icon : 'image', cmd : ed.plugins.ploneimage ? 'mcePloneImage' : 'mceImage', ui : true});
 
 			m.addSeparator();
 			am = m.addMenu({title : 'contextmenu.align'});

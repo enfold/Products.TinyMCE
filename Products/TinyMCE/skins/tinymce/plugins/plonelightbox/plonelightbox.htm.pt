@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" i18n:domain="tinymce">
+<head>
+  <title>Lightbox Setup</title>
+  <script type="text/javascript" src="../../tiny_mce_popup.js"></script>
+  <script type="text/javascript" src="../../utils/mctabs.js"></script>
+  <script type="text/javascript" src="../../utils/form_utils.js"></script>
+  <script type="text/javascript" src="js/plonelightbox.js"></script>
+
+</head>
+<body id="plonelightbox" style="display: none"
+  tal:define="portal_url context/portal_url; portal_tinymce context/portal_tinymce;">
+  <div class="dialog-wrapper" id="content">
+    <div class="field">
+      <label for="lightbox-name" i18n:domain="plone.tinymce" i18n:translate="">Name</label>
+      <div class="widget">
+        <form>
+          <input type="text" name="lightbox-name" id="lightbox-name" value="" size="35"/>
+        </form>
+      </div>
+    </div>
+
+    <form onsubmit="LightBox.apply();return false;" action="#">
+    <div class="mceActionPanel formControls">
+      <span class="actionButtons">
+        <input type="submit" id="apply" class="context" name="apply" i18n:attributes="value common_apply" value="Apply"/>
+        <input type="button" id="cancel" class="standalone" name="cancel" i18n:attributes="value common_cancel" onclick="tinyMCEPopup.close();" value="Cancel"/>
+      </span>
+    </div>
+  </form>
+</body>
+</html>
