@@ -432,7 +432,7 @@ class TinyMCE(SimpleItem):
         COMMON_ATTRS = CORE_ATTRS | I18N_ATTRS
 
         valid_elements = {
-            'a': COMMON_ATTRS | FOCUS_ATTRS | set('charset type name href hreflang rel rev shape coords target'.split()),
+            'a': COMMON_ATTRS | FOCUS_ATTRS | set('data-lightbox charset type name href hreflang rel rev shape coords target'.split()),
             'abbr': COMMON_ATTRS.copy(),
             'acronym': COMMON_ATTRS.copy(),
             'address': COMMON_ATTRS.copy(),
