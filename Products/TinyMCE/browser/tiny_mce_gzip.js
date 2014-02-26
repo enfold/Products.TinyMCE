@@ -12,7 +12,7 @@
               $.parseJSON($el.attr('data-mce-config')),
               customConfig);
 
-      $('.suppressVisualEditor', $field).hide();
+//      $('.suppressVisualEditor', $field).hide();
       $textFormatSelector.bind('change', function(e) {
         e.stopPropagation();
 
