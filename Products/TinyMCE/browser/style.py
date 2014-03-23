@@ -19,8 +19,9 @@ class TinyMCEStyle(BrowserView):
         registry_url = registry.absolute_url()
         context = aq_inner(self.context)
 
-        styles = registry.getEvaluatedResources(context)
-        skinname = url_quote(aq_inner(self.context).getCurrentSkinName())
+        theme_name = aq_inner(self.context).getCurrentSkinName()
+        styles = registry.getCookedResources(theme_name)
+        skinname = url_quote(theme_name)
         result = []
 
         for style in styles:
