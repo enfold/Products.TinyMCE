@@ -7,6 +7,12 @@ HISTORY
 
 - Nothing changed yet.
 
+1.3.6-EnfoldBranch
+------------------
+
+- Removed the ``plone.app.layout==2.3.7`` dependency so this package still
+  works with Plone 4.2
+  [frapell]
 
 1.3.6 (2014-02-19)
 ------------------
