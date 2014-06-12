@@ -6,7 +6,7 @@ from zope.interface import implements
 try:
     from lxml.html import fromstring
     fromstring     # pyflakes
-    SEARCHPATTERN = ".//a"
+
 except ImportError:
     from elementtree import HTMLTreeBuilder
 
@@ -16,7 +16,8 @@ except ImportError:
         parser.feed(text)
         return parser.close()
 
-    SEARCHPATTERN = "*/a"
+SEARCHPATTERN = "*/a"
+
 
 class ATAnchorView(BrowserView):
     implements(IAnchorView)
