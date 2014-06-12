@@ -6,6 +6,7 @@ from zope.interface import implements
 try:
     from lxml.html import fromstring
     fromstring     # pyflakes
+
 except ImportError:
     from elementtree import HTMLTreeBuilder
 

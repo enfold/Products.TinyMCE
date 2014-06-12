@@ -23,9 +23,16 @@ class TinyMCEStyle(BrowserView):
         styles = registry.getCookedResources(theme_name)
         skinname = url_quote(theme_name)
         result = []
+        user_agent = self.request.get('HTTP_USER_AGENT', 'browser')
 
         for style in styles:
-            if style.getMedia() not in ('print', 'projection') and style.getRel() == 'stylesheet':
+            if style.getMedia() not in ('print', 'projection') and \
+                            style.getRel() == 'stylesheet':
+                # do not load Internet Explorer conditional styles on non IE
+                # browsers
+                if not "Trident" in user_agent and \
+                        style.getConditionalcomment():
+                    continue
                 if style.isExternalResource():
                     src = style.getId()
                 else:
@@ -38,7 +45,8 @@ class TinyMCEStyle(BrowserView):
         if hasattr(portal_migration, 'getInstanceVersionTuple'):
             major_version = portal_migration.getInstanceVersionTuple()[0]
             if major_version == 3:
-                css = self.context.restrictedTraverse('tiny_mce_plone3.css')(self.context)
+                css = self.context.restrictedTraverse(
+                    'tiny_mce_plone3.css')(self.context)
                 result.append(css)
 
         return "\n".join(result)
