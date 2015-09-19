@@ -2,10 +2,12 @@
 HISTORY
 =======
 
-1.3.4 (unreleased)
-------------------
+1.3.3+tceq1 (unreleased)
+------------------------
 
-- Nothing changed yet.
+- #543898: Modify the plonebrowser plugin to include id and link to chosen
+  element
+  [frapell]
 
 
 1.3.3 (2013-03-26)

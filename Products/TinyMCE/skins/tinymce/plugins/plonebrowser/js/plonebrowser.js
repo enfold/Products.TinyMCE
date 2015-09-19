@@ -738,6 +738,17 @@ BrowserDialog.prototype.setDetails = function (url) {
                 self.thumb_url = "";
             }
 
+            if (data.url.split('/').length > 1){
+                jq('#shortnamedetails', document).html(data.url.split('/').slice(-1)[0]);
+                jq('#urldetails', document).html("");
+                jq('#urldetails', document).append(
+                    jq('<a></a>')
+                    .attr('href', data.url)
+                    .attr('target', '_blank')
+                    .html(data.url)
+                );
+            }
+
             jq('#description', document).val(data.description);
             jq('#description_href', document).val(data.url);
 

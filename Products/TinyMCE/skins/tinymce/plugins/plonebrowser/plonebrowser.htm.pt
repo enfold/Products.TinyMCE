@@ -78,7 +78,18 @@
                             <p id="titledetails"></p>
                         </div>
                     </div>
-
+                    <div class="field">
+                        <label id="shortnamelabel" i18n:domain="plone.tinymce" i18n:translate="">Short Name/ID</label>
+                        <div class="widget">
+                            <p id="shortnamedetails"></p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label id="urllabel" i18n:domain="plone.tinymce" i18n:translate="">URL</label>
+                        <div class="widget">
+                            <p id="urldetails"></p>
+                        </div>
+                    </div>
                     <div class="field">
                         <label id="descriptionlabel" for="description" i18n:domain="plone.tinymce" i18n:translate="">Description</label>
                         <div class="widget">
