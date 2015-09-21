@@ -1,3 +1,7 @@
+#plonebrowser p#urldetails a, #plonebrowser #shortnamedetails {
+word-wrap: break-word;
+line-height: 1.3em;
+}
 #plonebrowser #content.dialog-wrapper { font-size: 80%; }
 #plonebrowser #no-items { padding: 40px; }
 #plonebrowser .field { margin-bottom: 0; }
